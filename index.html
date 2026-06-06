@@ -17,13 +17,12 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #f5f2ea;  /* greige base (beige-grey) */
-      color: #1e1e1e;             /* black / near black for contrast */
+      background-color: #f5f2ea;
+      color: #1e1e1e;
       scroll-behavior: smooth;
       line-height: 1.5;
     }
 
-    /* dark green accents */
     :root {
       --dark-green: #1a4d3e;
       --greige-light: #f5f2ea;
@@ -31,14 +30,12 @@
       --shadow-sm: 0 8px 20px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.05);
     }
 
-    /* container utility */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* Header (sticky but elegant) */
     .header {
       position: sticky;
       top: 0;
@@ -89,7 +86,6 @@
       color: #1a4d3e;
     }
 
-    /* profile section with round image */
     .profile {
       padding: 3rem 0 2rem 0;
       text-align: center;
@@ -133,7 +129,6 @@
       font-size: 1.1rem;
     }
 
-    /* Section styles */
     section {
       padding: 4rem 0;
       border-bottom: 1px solid rgba(26, 77, 62, 0.15);
@@ -159,7 +154,6 @@
       border-radius: 2px;
     }
 
-    /* Skills grid */
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
@@ -184,7 +178,6 @@
       background-color: #eef4f1;
     }
 
-    /* Projects cards */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -223,7 +216,6 @@
       transition: 0.3s;
     }
 
-    /* dual image container for pc + mobile mockup (customizable) */
     .dual-device {
       display: flex;
       gap: 0.8rem;
@@ -287,7 +279,6 @@
       color: #1a4d3e;
     }
 
-    /* Footer */
     .footer {
       text-align: center;
       padding: 2rem 0;
@@ -297,7 +288,6 @@
       margin-top: 1rem;
     }
 
-    /* Scroll animation (fade-in on scroll) */
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
@@ -309,7 +299,6 @@
       transform: translateY(0);
     }
 
-    /* responsive */
     @media (max-width: 700px) {
       .container {
         padding: 0 1.5rem;
@@ -329,7 +318,6 @@
       }
     }
 
-    /* extra green detail */
     .btn-outline {
       display: inline-block;
       margin-top: 0.5rem;
@@ -349,7 +337,6 @@
       color: white;
     }
 
-    /* custom file input for image update (simple) */
     .edit-image-label {
       cursor: pointer;
       background: rgba(26, 77, 62, 0.8);
@@ -393,7 +380,6 @@
 </header>
 
 <main>
-  <!-- Profile Section with round avatar -->
   <div class="container profile">
     <div class="avatar" id="avatarContainer">
       <img id="profileImage" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Brian Alexander Mejia Parra">
@@ -406,7 +392,6 @@
     <div class="tagline">crafting robust web solutions | backend • frontend • databases</div>
   </div>
 
-  <!-- SKILLS Section (en ingles) -->
   <section id="skills">
     <div class="container fade-up">
       <h2 class="section-title">SKILLS / HABILIDADES</h2>
@@ -422,53 +407,49 @@
     </div>
   </section>
 
-  <!-- PROJECTS Section with customizable images for PC + mobile -->
   <section id="projects">
     <div class="container fade-up">
       <h2 class="section-title">PROJECTS</h2>
       <div class="projects-grid">
         
-<!-- Project 1: AutoFuel SENA Mobile App (Autonomous Fueling) -->
-<div class="project-card">
-    <div class="project-img" style="position: relative; background: linear-gradient(135deg, #1a4d3e, #0d2e24); min-height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-        <i class="fas fa-gas-pump" style="font-size: 4rem; color: #ffd700; margin-bottom: 1rem;"></i>
-        <i class="fas fa-mobile-alt" style="font-size: 3rem; color: white;"></i>
-        <p style="color: white; margin-top: 1rem; font-size: 0.8rem;">📱 Mobile simulation mockup</p>
-        <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.6); border-radius: 20px; padding: 2px 8px;">
-            <label for="autoFuelImgUpload" style="color: white; font-size: 10px; cursor: pointer;"><i class="fas fa-image"></i> change mockup</label>
-            <input type="file" id="autoFuelImgUpload" accept="image/*" style="display: none;">
+        <!-- MAXFUEL SENA - Autonomous Fueling App -->
+        <div class="project-card">
+          <div class="project-img" id="autoFuelImgArea" style="position: relative; background: linear-gradient(135deg, #1a4d3e, #0d2e24); min-height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <i class="fas fa-gas-pump" style="font-size: 4rem; color: #ffd700; margin-bottom: 1rem;"></i>
+            <i class="fas fa-mobile-alt" style="font-size: 3rem; color: white;"></i>
+            <p style="color: white; margin-top: 1rem; font-size: 0.8rem;">📱 Mobile simulation mockup</p>
+            <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.6); border-radius: 20px; padding: 2px 8px;">
+              <label for="autoFuelImgUpload" style="color: white; font-size: 10px; cursor: pointer;"><i class="fas fa-image"></i> change mockup</label>
+              <input type="file" id="autoFuelImgUpload" accept="image/*" style="display: none;">
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>⛽ MAXFUEL SENA — Autonomous Fueling App</h3>
+            <p><strong>🎓 Academic capstone project @ SENA | Full simulation (MVP)</strong></p>
+            <p>Mobile app concept that allows drivers to refuel their vehicles autonomously via smartphone — no cashier needed. Users select fuel type, authorize pump, track liters in real-time, and complete mobile payment. Complete workflow simulation built as my SENA final project.</p>
+            <div style="margin: 0.8rem 0;">
+              <strong>🎯 Problem solved:</strong> Long queues and dependency on cashiers at gas stations. My solution empowers users to fuel up anytime — fully autonomous experience.
+            </div>
+            <div class="tech-stack">
+              <span>📱 Mobile Simulation</span>
+              <span>💳 Payment Mockup</span>
+              <span>⛽ Self-Service UX</span>
+              <span>🔐 Session Logic</span>
+              <span>🎨 Interactive Prototype</span>
+            </div>
+            <div style="margin: 0.8rem 0; font-size: 0.85rem; background: #f0f0f0; padding: 0.5rem; border-radius: 8px;">
+              <strong>🧪 What I learned:</strong> Designing for real-world problems | Autonomous workflows | Payment gateway simulation | User testing & iteration | Presenting technical demos
+            </div>
+            <span style="display: inline-block; background: #1a4d3e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; margin-top: 0.5rem;">
+              🎬 SENA academic project — Demo simulation available upon request
+            </span>
+          </div>
         </div>
-    </div>
-    <div class="project-info">
-        <h3>⛽ MAXFUEL SENA — Autonomous Fueling App</h3>
-        <p><strong>🎓 Academic capstone project @ SENA | Full simulation (MVP)</strong></p>
-        <p>Mobile app concept that allows drivers to refuel their vehicles autonomously via smartphone — no cashier needed. Users select fuel type, authorize pump, track liters in real-time, and complete mobile payment. Complete workflow simulation built as my SENA final project.</p>
-        
-        <div style="margin: 0.8rem 0;">
-            <strong>🎯 Problem solved:</strong> Long queues and dependency on cashiers at gas stations. My solution empowers users to fuel up anytime — fully autonomous experience.
-        </div>
-        
-        <div class="tech-stack">
-            <span>📱 Mobile Simulation</span>
-            <span>💳 Payment Mockup</span>
-            <span>⛽ Self-Service UX</span>
-            <span>🔐 Session Logic</span>
-            <span>🎨 Interactive Prototype</span>
-        </div>
-        
-        <div style="margin: 0.8rem 0; font-size: 0.85rem; background: #f0f0f0; padding: 0.5rem; border-radius: 8px;">
-            <strong>🧪 What I learned:</strong> Designing for real-world problems | Autonomous workflows | Payment gateway simulation | User testing & iteration | Presenting technical demos
-        </div>
-        
-        <span style="display: inline-block; background: #1a4d3e; color: white; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; margin-top: 0.5rem;">
-            🎬 SENA academic project — Demo simulation available upon request
-        </span>
-    </div>
-</div>
-        <!-- Project 2: extra project with placeholder image (but you can still change) but using image of pc/mobile? second project normal image (customizable) but to give flexibility, we add both regular project and optional preview -->
+
+        <!-- Project 2 -->
         <div class="project-card">
           <div class="project-img" style="position: relative;">
-            <img id="project2Img" src="https://placehold.co/600x400/1a4d3e/white?text=E-Commerce+Backend" alt="Project screenshot" style="width:100%; height:100%; object-fit:cover;">
+            <img id="project2Img" src="https://placehold.co/600x400/1a4d3e/white?text=Inventory+Manager+System" alt="Project screenshot" style="width:100%; height:100%; object-fit:cover;">
             <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.6); border-radius: 20px; padding: 2px 8px;">
               <label for="project2Upload" style="color: white; font-size: 10px; cursor: pointer;"><i class="fas fa-pen"></i> change img</label>
               <input type="file" id="project2Upload" accept="image/*" style="display: none;">
@@ -484,10 +465,10 @@
           </div>
         </div>
 
-        <!-- Project 3: another example with also image update -->
+        <!-- Project 3 -->
         <div class="project-card">
           <div class="project-img" style="position: relative;">
-            <img id="project3Img" src="https://placehold.co/600x400/1a4d3e/white?text=JS+Task+Flow" alt="JS project">
+            <img id="project3Img" src="https://placehold.co/600x400/1a4d3e/white?text=TaskFlow+SPA" alt="JS project">
             <div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.6); border-radius: 20px; padding: 2px 8px;">
               <label for="project3Upload" style="color: white; font-size: 10px; cursor: pointer;"><i class="fas fa-pen"></i> change img</label>
               <input type="file" id="project3Upload" accept="image/*" style="display: none;">
@@ -503,13 +484,11 @@
           </div>
         </div>
       </div>
-      <p style="margin-top: 2rem; text-align: center; font-size: 0.9rem;"><i class="fas fa-image"></i> Tip: click <strong>"PC" / "Mobile"</strong> buttons on first project to replace images. For other projects, use "change img" button.</p>
     </div>
   </section>
 
-  <!-- Contact / extra section -->
   <section id="contact" style="text-align: center; margin-top: 3rem; padding: 2rem; background: #f5f5f5; border-radius: 10px;">
-    <h3>📫 CONTACTO</h3>
+    <h3>📫 CONTACT</h3>
     <p style="margin-bottom: 1rem;">
         📧 alexanderprogramingsoftware@gmail.com &nbsp;|&nbsp; 
         <i class="fab fa-github"></i> <a href="https://github.com/DevAlexMe" target="_blank">github.com/DevAlexMe</a> &nbsp;|&nbsp; 
@@ -518,7 +497,7 @@
     <p style="font-size: 0.9rem; color: #666;">
        ⚡ Always open to learning and collaborating on interesting projects.
     </p>
-</section>
+  </section>
 </main>
 
 <footer class="footer">
@@ -528,20 +507,18 @@
 </footer>
 
 <script>
-  // Scroll animation: Intersection Observer for .fade-up elements
   const fadeElements = document.querySelectorAll('.fade-up');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('appear');
-        observer.unobserve(entry.target); // optional: keep visible
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.15, rootMargin: "0px 0px -10px 0px" });
   
   fadeElements.forEach(el => observer.observe(el));
   
-  // Force initial check for any already visible
   window.addEventListener('load', () => {
     fadeElements.forEach(el => {
       const rect = el.getBoundingClientRect();
@@ -551,7 +528,6 @@
     });
   });
 
-  // 1) Profile picture upload (round)
   const avatarUpload = document.getElementById('avatarUpload');
   const profileImage = document.getElementById('profileImage');
   avatarUpload.addEventListener('change', function(e) {
@@ -565,38 +541,6 @@
     }
   });
 
-  // 2) PROJECT 1: PC and Mobile image replace logic (dual image)
-  const pcUpload = document.getElementById('pcImgUpload');
-  const mobileUpload = document.getElementById('mobileImgUpload');
-  const project1PcImg = document.getElementById('project1PcImg');
-  const project1MobileImg = document.getElementById('project1MobileImg');
-  
-  if (pcUpload) {
-    pcUpload.addEventListener('change', function(e) {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(ev) {
-          project1PcImg.src = ev.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-  }
-  if (mobileUpload) {
-    mobileUpload.addEventListener('change', function(e) {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(ev) {
-          project1MobileImg.src = ev.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-  }
-
-  // 3) Project 2 image change
   const proj2Upload = document.getElementById('project2Upload');
   const proj2Img = document.getElementById('project2Img');
   if (proj2Upload) {
@@ -610,7 +554,6 @@
     });
   }
 
-  // 4) Project 3 image change
   const proj3Upload = document.getElementById('project3Upload');
   const proj3Img = document.getElementById('project3Img');
   if (proj3Upload) {
@@ -624,7 +567,6 @@
     });
   }
 
-  // Extra styling: smooth scroll for anchor links
   document.querySelectorAll('.nav-links a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -635,38 +577,27 @@
       }
     });
   });
-  
-  // Also for any other links if needed (project demo buttons are "#", but they don't cause issues)
-  // small optional: ensure header does not overlap on scroll (sticky already handles)
-  // also ensure that any images that fail to load have fallback (already placeholders)
-  
-  // additional dynamic: apply hover effect on tech badges as wanted, plus dark green details on border etc.
-  
-  // Optional: preload some nice custom demo for mobile and pc images: keep placeholder style.
-  console.log('Portfolio ready: greige background, dark green accents, animations on scroll');
-  
-// AutoFuel project image change (SENA mobile app mockup)
-const autoFuelUpload = document.getElementById('autoFuelImgUpload');
-const autoFuelImgArea = document.querySelector('.project-card:first-child .project-img');
-if (autoFuelUpload && autoFuelImgArea) {
+
+  const autoFuelUpload = document.getElementById('autoFuelImgUpload');
+  const autoFuelImgArea = document.getElementById('autoFuelImgArea');
+  if (autoFuelUpload && autoFuelImgArea) {
     autoFuelUpload.addEventListener('change', (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (ev) => {
-                // Change the background or add an image inside
-                autoFuelImgArea.style.backgroundImage = `url(${ev.target.result})`;
-                autoFuelImgArea.style.backgroundSize = 'cover';
-                autoFuelImgArea.style.backgroundPosition = 'center';
-                // Hide or adjust the icons to show the image better
-                const icons = autoFuelImgArea.querySelectorAll('i, p');
-                icons.forEach(icon => icon.style.opacity = '0.3');
-            };
-            reader.readAsDataURL(file);
-        }
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          autoFuelImgArea.style.backgroundImage = `url(${ev.target.result})`;
+          autoFuelImgArea.style.backgroundSize = 'cover';
+          autoFuelImgArea.style.backgroundPosition = 'center';
+          const icons = autoFuelImgArea.querySelectorAll('i, p');
+          icons.forEach(icon => icon.style.opacity = '0.3');
+        };
+        reader.readAsDataURL(file);
+      }
     });
-}
-  </script>
-<!-- small note: all labels/buttons in english, skills and project descriptions in english, header shows full legal name -->
+  }
+
+  console.log('Portfolio ready: MAXFUEL SENA project included');
+</script>
 </body>
 </html>
