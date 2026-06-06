@@ -428,39 +428,6 @@
       <h2 class="section-title">PROJECTS</h2>
       <div class="projects-grid">
         
-        <!-- Project 1: dual image (pc + mobile side by side) with replaceable images -->
-        <div class="project-card">
-          <div class="project-img" id="project1ImgArea">
-            <div class="dual-device" id="dualDevice1">
-              <!-- PC icon with image slot (first image) -->
-              <div class="device-icon" style="flex-direction: column; background: transparent; box-shadow: none; width: auto;">
-                <i class="fas fa-desktop" style="font-size: 2rem; color:#1a4d3e;"></i>
-                <img id="project1PcImg" src="https://placehold.co/400x200/1a4d3e/white?text=PC+Preview" alt="PC preview" style="width: 100px; height: auto; border-radius: 6px; margin-top: 5px;">
-              </div>
-              <!-- Mobile icon with image slot -->
-              <div class="device-icon" style="flex-direction: column; background: transparent; box-shadow: none; width: auto;">
-                <i class="fas fa-mobile-alt" style="font-size: 2rem; color:#1a4d3e;"></i>
-                <img id="project1MobileImg" src="https://placehold.co/200x300/1a4d3e/white?text=Mobile+UI" alt="Mobile preview" style="width: 70px; height: auto; border-radius: 6px; margin-top: 5px;">
-              </div>
-            </div>
-            <!-- hidden file inputs strictly for project 1 images -->
-            <div style="position: absolute; bottom: 5px; right: 5px; background: rgba(0,0,0,0.5); border-radius: 20px; padding: 2px 8px;">
-              <label for="pcImgUpload" style="color: white; font-size: 10px; cursor: pointer;"><i class="fas fa-edit"></i> PC</label>
-              <input type="file" id="pcImgUpload" accept="image/*" style="display: none;">
-              <label for="mobileImgUpload" style="color: white; font-size: 10px; margin-left: 8px; cursor: pointer;"><i class="fas fa-edit"></i> Mobile</label>
-              <input type="file" id="mobileImgUpload" accept="image/*" style="display: none;">
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>Dual-device dashboard</h3>
-            <p>Responsive web app with real-time sync between desktop & mobile views. Built with PHP backend, SQL database, and vanilla JS.</p>
-            <div class="tech-stack">
-              <span>PHP</span><span>JS</span><span>SQL</span><span>CSS</span>
-            </div>
-            <a href="#" class="btn-outline">Live demo →</a>
-          </div>
-        </div>
-
 <!-- Project 1: AutoFuel SENA Mobile App (Autonomous Fueling) -->
 <div class="project-card">
     <div class="project-img" style="position: relative; background: linear-gradient(135deg, #1a4d3e, #0d2e24); min-height: 200px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
@@ -677,8 +644,29 @@
   
   // Optional: preload some nice custom demo for mobile and pc images: keep placeholder style.
   console.log('Portfolio ready: greige background, dark green accents, animations on scroll');
-</script>
-
+  
+// AutoFuel project image change (SENA mobile app mockup)
+const autoFuelUpload = document.getElementById('autoFuelImgUpload');
+const autoFuelImgArea = document.querySelector('.project-card:first-child .project-img');
+if (autoFuelUpload && autoFuelImgArea) {
+    autoFuelUpload.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                // Change the background or add an image inside
+                autoFuelImgArea.style.backgroundImage = `url(${ev.target.result})`;
+                autoFuelImgArea.style.backgroundSize = 'cover';
+                autoFuelImgArea.style.backgroundPosition = 'center';
+                // Hide or adjust the icons to show the image better
+                const icons = autoFuelImgArea.querySelectorAll('i, p');
+                icons.forEach(icon => icon.style.opacity = '0.3');
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+}
+  </script>
 <!-- small note: all labels/buttons in english, skills and project descriptions in english, header shows full legal name -->
 </body>
 </html>
